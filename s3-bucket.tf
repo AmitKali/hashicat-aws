@@ -1,13 +1,6 @@
-
-module "s3_bucket" {
-  source = "terraform-aws-modules/s3-bucket/aws"
+module "s3-bucket" {
+  source  = "app.terraform.io/Amex_Training/s3-bucket/aws"
   version = "2.8.0"
-  bucket = "amitsharma"
-  bucket_prefix = "-new-bucket"
-  acl    = "private"
-
-  versioning = {
-    enabled = true
-  }
-
+  # insert required variables here
+  bucket_prefix = "${var.prefix}"
 }
